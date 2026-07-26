@@ -1,0 +1,936 @@
+main{
+
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+
+}
+
+
+/*========================
+
+BACKGROUND GLOW
+
+=========================*/
+
+.bg-glow{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(120px);
+
+}
+
+.glow-left{
+
+    width:650px;
+    height:650px;
+
+    background:radial-gradient(circle,
+    rgba(151,71,255,.45) 0%,
+    rgba(151,71,255,.18) 35%,
+    transparent 75%);
+
+    left:-150px;
+    top:80px;
+
+}
+
+.glow-right{
+
+    width:520px;
+    height:520px;
+
+    background:radial-gradient(circle,
+    rgba(185,84,255,.55) 0%,
+    rgba(185,84,255,.20) 40%,
+    transparent 75%);
+
+    right:130px;
+    top:250px;
+
+}
+
+
+
+/*========================
+
+HERO
+
+=========================*/
+
+.hero{
+
+    width:88%;
+    margin:auto;
+
+    min-height:calc(100vh - 90px);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:relative;
+    z-index:5;
+
+}
+
+/*========================
+
+LEFT
+
+=========================*/
+
+.hero-text{
+
+    width:48%;
+
+}
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px 24px;
+
+    border-radius:40px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.04);
+
+}
+
+.badge-dot{
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#d356ff;
+
+}
+
+.badge p{
+
+    font-size:13px;
+    letter-spacing:3px;
+    color:#d6c9f2;
+
+}
+
+.hero h1{
+
+    margin-top:35px;
+
+    font-size:86px;
+
+    line-height:1.05;
+
+    font-weight:700;
+
+}
+
+/* animated name */
+
+.name{
+
+    color:white;
+
+    background:linear-gradient(
+    90deg,
+    white,
+    #b95cff,
+    white,
+    #ff9fff,
+    white);
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.description{
+
+    margin-top:28px;
+
+    width:540px;
+
+    font-size:18px;
+
+    color:#b9adc9;
+
+    line-height:2;
+
+}
+
+
+/*========================
+
+BUTTONS
+
+=========================*/
+
+.buttons{
+
+    display:flex;
+    gap:18px;
+
+    margin-top:45px;
+
+}
+
+.project-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px 42px;
+
+    border-radius:40px;
+
+    background:linear-gradient(90deg,#8b5cf6,#d946ef);
+
+    font-weight:600;
+
+}
+
+.connect-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px 42px;
+
+    border-radius:40px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.02);
+
+}
+
+
+/*========================
+
+STATS
+
+=========================*/
+
+.stats{
+
+    display:flex;
+
+    gap:70px;
+
+    margin-top:70px;
+
+}
+
+.stats h2{
+
+    font-size:44px;
+
+}
+
+.stats p{
+
+    margin-top:5px;
+
+    color:#9889b2;
+
+    font-size:15px;
+
+}
+
+
+/*========================
+
+RIGHT
+
+=========================*/
+
+.hero-image{
+
+    width:420px;
+    height:420px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+/*========================
+
+PROFILE
+
+=========================*/
+
+.hero-image img{
+
+    width:200px;
+    height:200px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:7px solid #8f42ff;
+
+    position:relative;
+    z-index:50;
+
+}
+
+
+/*========================
+
+ORBITS
+
+=========================*/
+
+.orbit{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:1px solid rgba(181,104,255,.18);
+
+}
+
+.orbit1{
+
+    width:240px;
+    height:240px;
+
+}
+
+.orbit2{
+
+    width:285px;
+    height:285px;
+
+}
+
+.orbit3{
+
+    width:335px;
+    height:335px;
+
+}
+
+
+/*========================
+
+FLOATING TAGS
+
+=========================*/
+
+.floating{
+
+    position:absolute;
+
+    padding:10px 20px;
+
+    border-radius:18px;
+
+    background:#2d1154;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:#bfaeff;
+
+    font-size:14px;
+
+    z-index:100;
+
+}
+
+.learning{
+
+    top:50px;
+    right:-20px;
+
+}
+
+.code{
+
+    right:-10px;
+    top:165px;
+
+    width:55px;
+
+    text-align:center;
+
+}
+
+.year{
+
+    left:-20px;
+    bottom:55px;
+
+}
+
+
+/*========================
+
+STARS
+
+=========================*/
+
+.stars{
+
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+}
+
+.stars span{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+}
+
+/* Positions */
+
+.stars span:nth-child(1){top:12%;left:6%;}
+.stars span:nth-child(2){top:18%;left:18%;}
+.stars span:nth-child(3){top:8%;left:45%;}
+.stars span:nth-child(4){top:20%;left:70%;}
+.stars span:nth-child(5){top:14%;right:8%;}
+
+.stars span:nth-child(6){top:38%;left:12%;}
+.stars span:nth-child(7){top:50%;left:30%;}
+.stars span:nth-child(8){top:60%;left:52%;}
+.stars span:nth-child(9){top:35%;right:20%;}
+.stars span:nth-child(10){top:52%;right:6%;}
+
+.stars span:nth-child(11){bottom:35%;left:8%;}
+.stars span:nth-child(12){bottom:25%;left:28%;}
+.stars span:nth-child(13){bottom:18%;left:45%;}
+.stars span:nth-child(14){bottom:30%;right:18%;}
+.stars span:nth-child(15){bottom:15%;right:8%;}
+
+.stars span:nth-child(16){top:75%;left:15%;}
+.stars span:nth-child(17){top:70%;left:65%;}
+.stars span:nth-child(18){top:82%;left:82%;}
+.stars span:nth-child(19){top:40%;left:86%;}
+.stars span:nth-child(20){top:28%;left:55%;}
+
+/*=========================================
+ANIMATED NAME
+=========================================*/
+
+.name{
+
+    animation: gradientMove 6s linear infinite;
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+
+}
+
+
+/*=========================================
+BACKGROUND GLOW MOVEMENT
+=========================================*/
+
+.glow-left{
+
+    animation: leftGlow 10s ease-in-out infinite alternate;
+
+}
+
+.glow-right{
+
+    animation: rightGlow 8s ease-in-out infinite alternate;
+
+}
+
+@keyframes leftGlow{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(40px,-30px) scale(1.1);
+
+    }
+
+}
+
+@keyframes rightGlow{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(-30px,25px) scale(1.08);
+
+    }
+
+}
+
+
+/*=========================================
+ORBITS
+=========================================*/
+
+.orbit1{
+
+    animation: rotateOrbit 18s linear infinite;
+
+}
+
+.orbit2{
+
+    animation: rotateOrbitReverse 25s linear infinite;
+
+}
+
+.orbit3{
+
+    animation: rotateOrbit 35s linear infinite;
+
+}
+
+@keyframes rotateOrbit{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes rotateOrbitReverse{
+
+    from{
+
+        transform:rotate(360deg);
+
+    }
+
+    to{
+
+        transform:rotate(0deg);
+
+    }
+
+}
+
+
+/*=========================================
+PROFILE FLOATING
+=========================================*/
+
+.hero-image{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+/*=========================================
+FLOATING TAGS
+=========================================*/
+
+.learning{
+
+    animation:tag1 5s ease-in-out infinite;
+
+}
+
+.code{
+
+    animation:tag2 4s ease-in-out infinite;
+
+}
+
+.year{
+
+    animation:tag3 6s ease-in-out infinite;
+
+}
+
+@keyframes tag1{
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+@keyframes tag2{
+
+    50%{
+
+        transform:translateX(8px);
+
+    }
+
+}
+
+@keyframes tag3{
+
+    50%{
+
+        transform:translateY(8px);
+
+    }
+
+}
+
+
+/*=========================================
+TWINKLING STARS
+=========================================*/
+
+.stars span{
+
+    animation: twinkle 3s infinite ease-in-out;
+
+}
+
+.stars span:nth-child(2){animation-delay:.5s;}
+.stars span:nth-child(3){animation-delay:1s;}
+.stars span:nth-child(4){animation-delay:1.5s;}
+.stars span:nth-child(5){animation-delay:2s;}
+.stars span:nth-child(6){animation-delay:.8s;}
+.stars span:nth-child(7){animation-delay:2.5s;}
+.stars span:nth-child(8){animation-delay:1.8s;}
+.stars span:nth-child(9){animation-delay:.3s;}
+.stars span:nth-child(10){animation-delay:1.2s;}
+.stars span:nth-child(11){animation-delay:2.8s;}
+.stars span:nth-child(12){animation-delay:1.7s;}
+.stars span:nth-child(13){animation-delay:.6s;}
+.stars span:nth-child(14){animation-delay:2.2s;}
+.stars span:nth-child(15){animation-delay:1.4s;}
+.stars span:nth-child(16){animation-delay:.2s;}
+.stars span:nth-child(17){animation-delay:2.7s;}
+.stars span:nth-child(18){animation-delay:1.9s;}
+.stars span:nth-child(19){animation-delay:.9s;}
+.stars span:nth-child(20){animation-delay:2.1s;}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.2;
+        transform:scale(.5);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(2);
+
+    }
+
+    100%{
+
+        opacity:.2;
+        transform:scale(.5);
+
+    }
+
+}
+
+
+/*=========================================
+BUTTON HOVER
+=========================================*/
+
+.project-btn,
+.connect-btn{
+
+    transition:.4s;
+
+}
+
+.project-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(173,89,255,.35);
+
+}
+
+.connect-btn:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:translateY(-5px);
+
+}
+
+
+/*=========================================
+TABLET
+=========================================*/
+
+@media(max-width:1100px){
+
+.hero{
+
+    flex-direction:column-reverse;
+
+    justify-content:center;
+
+    gap:70px;
+
+    text-align:center;
+
+}
+
+.hero-text{
+
+    width:100%;
+
+}
+
+.description{
+
+    width:100%;
+
+}
+
+.buttons{
+
+    justify-content:center;
+
+}
+
+.stats{
+
+    justify-content:center;
+
+}
+
+.hero-image{
+
+    width:350px;
+    height:350px;
+
+}
+
+.hero-image img{
+
+    width:180px;
+    height:180px;
+
+}
+
+.hero h1{
+
+    font-size:64px;
+
+}
+
+}
+
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    gap:20px;
+
+    padding:30px 0;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.hero{
+
+    padding:60px 0;
+
+}
+
+.hero h1{
+
+    font-size:48px;
+
+}
+
+.description{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.project-btn,
+.connect-btn{
+
+    width:220px;
+
+    text-align:center;
+
+}
+
+.stats{
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.hero-image{
+
+    width:280px;
+    height:280px;
+
+}
+
+.hero-image img{
+
+    width:150px;
+    height:150px;
+
+}
+
+.orbit1{
+
+    width:180px;
+    height:180px;
+
+}
+
+.orbit2{
+
+    width:220px;
+    height:220px;
+
+}
+
+.orbit3{
+
+    width:260px;
+    height:260px;
+
+}
+
+.learning{
+
+    right:-5px;
+    top:20px;
+
+}
+
+.code{
+
+    right:0;
+
+}
+
+.year{
+
+    left:-5px;
+
+}
+
+}
+
+.home.home-visible {
+    filter: blur(0);
+
+    transform: scale(1);
+
+    transition:
+        filter 1.5s ease,
+        transform 1.5s ease;
+}
