@@ -1,0 +1,792 @@
+/*====================================================
+                JOURNEY SECTION
+====================================================*/
+
+.journey-section{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:#18052f;
+
+    overflow:hidden;
+
+}
+
+.journey-container{
+
+    width:88%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/*=========================
+BACKGROUND GLOW
+=========================*/
+
+.journey-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(155,92,255,.18),
+        transparent 70%
+    );
+
+    left:-180px;
+    top:120px;
+
+    filter:blur(100px);
+
+}
+
+.journey-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(217,70,239,.10),
+        transparent 70%
+    );
+
+    right:-150px;
+    bottom:-100px;
+
+    filter:blur(90px);
+
+}
+
+
+/*=========================
+TITLE
+=========================*/
+
+.journey-title{
+
+    margin-bottom:80px;
+
+}
+
+.journey-title span{
+
+    display:block;
+
+    color:#c58cff;
+
+    font-size:12px;
+
+    letter-spacing:6px;
+
+    margin-bottom:18px;
+
+}
+
+.journey-title h2{
+
+    font-size:60px;
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+.journey-title p{
+
+    margin-top:28px;
+
+    color:#a79cbc;
+
+    font-size:22px;
+
+    max-width:620px;
+
+    line-height:1.7;
+
+}
+
+.journey-title .title-line{
+
+    width:100px;
+
+    height:4px;
+
+    margin-top:22px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #d946ef,
+        transparent
+    );
+
+}
+
+
+/*=========================
+TIMELINE
+=========================*/
+
+.timeline{
+
+    position:relative;
+
+    padding-left:180px;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    left:22px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+
+/*=========================
+ITEM
+=========================*/
+
+.journey-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:55px;
+
+    margin-bottom:95px;
+
+}
+
+.journey-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/*=========================
+ICON
+=========================*/
+
+.timeline-icon{
+
+    position:absolute;
+
+    left:-180px;
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(184,107,255,.25);
+
+    color:#d17dff;
+
+    font-size:18px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 20px rgba(139,92,246,.18);
+
+}
+
+
+/*=========================
+CONTENT
+=========================*/
+
+.journey-content{
+
+    flex:1;
+
+}
+
+.journey-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+}
+
+.date{
+
+    color:#be83ff;
+
+    font-size:15px;
+
+}
+
+.tag{
+
+    padding:7px 16px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(255,255,255,.04);
+
+    color:#e3d8ff;
+
+    font-size:14px;
+
+}
+
+.journey-content h3{
+
+    font-size:33px;
+
+    color:#fff;
+
+    margin-bottom:18px;
+
+}
+
+.journey-content p{
+
+    color:#a59ab9;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    max-width:760px;
+
+}
+
+/*====================================================
+        JOURNEY ANIMATIONS & RESPONSIVE
+====================================================*/
+
+/*=========================
+BACKGROUND GLOW ANIMATION
+=========================*/
+
+.journey-section::before{
+
+    animation:journeyGlow1 8s ease-in-out infinite alternate;
+
+}
+
+.journey-section::after{
+
+    animation:journeyGlow2 10s ease-in-out infinite alternate;
+
+}
+
+@keyframes journeyGlow1{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(-40px,35px) scale(1.15);
+
+    }
+
+}
+
+@keyframes journeyGlow2{
+
+    from{
+
+        transform:translate(0,0) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(40px,-40px) scale(1.1);
+
+    }
+
+}
+
+
+/*=========================
+TITLE LINE
+=========================*/
+
+.journey-title .title-line{
+
+    background-size:200%;
+
+    animation:titleGradient 3s linear infinite;
+
+}
+
+@keyframes titleGradient{
+
+    from{
+
+        background-position:left;
+
+    }
+
+    to{
+
+        background-position:right;
+
+    }
+
+}
+
+
+/*=========================
+TIMELINE LINE
+=========================*/
+
+.timeline-line{
+
+    background:linear-gradient(
+        to bottom,
+        rgba(139,92,246,.15),
+        rgba(217,70,239,.85),
+        rgba(139,92,246,.15)
+    );
+
+    background-size:100% 250%;
+
+    animation:lineMove 6s linear infinite;
+
+}
+
+@keyframes lineMove{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:0 100%;
+
+    }
+
+}
+
+
+/*=========================
+TIMELINE ICON
+=========================*/
+
+.timeline-icon{
+
+    transition:.4s;
+
+    animation:pulseIcon 3s ease-in-out infinite;
+
+}
+
+@keyframes pulseIcon{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(217,70,239,.3);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 18px rgba(217,70,239,.45),
+        0 0 35px rgba(139,92,246,.25);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(217,70,239,.3);
+
+    }
+
+}
+
+.journey-item:hover .timeline-icon{
+
+    transform:scale(1.15) rotate(10deg);
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #d946ef
+    );
+
+    color:#fff;
+
+}
+
+
+/*=========================
+CONTENT CARD
+=========================*/
+
+.journey-content{
+
+    transition:.35s;
+
+}
+
+.journey-item:hover .journey-content{
+
+    transform:translateX(10px);
+
+}
+
+.journey-item:hover h3{
+
+    color:#d69eff;
+
+}
+
+.journey-content h3{
+
+    transition:.35s;
+
+}
+
+
+/*=========================
+TAG
+=========================*/
+
+.tag{
+
+    transition:.35s;
+
+}
+
+.journey-item:hover .tag{
+
+    background:linear-gradient(
+        90deg,
+        #8b5cf6,
+        #d946ef
+    );
+
+    border-color:transparent;
+
+}
+
+
+/*=========================
+SCROLL ANIMATION
+=========================*/
+
+.journey-item{
+
+    opacity:0;
+
+    animation:journeyFade .8s forwards;
+
+}
+
+.journey-item:nth-child(2){
+
+    animation-delay:.1s;
+
+}
+
+.journey-item:nth-child(3){
+
+    animation-delay:.25s;
+
+}
+
+.journey-item:nth-child(4){
+
+    animation-delay:.4s;
+
+}
+
+.journey-item:nth-child(5){
+
+    animation-delay:.55s;
+
+}
+
+.journey-item:nth-child(6){
+
+    animation-delay:.7s;
+
+}
+
+.journey-item:nth-child(7){
+
+    animation-delay:.85s;
+
+}
+
+@keyframes journeyFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================
+TABLET
+=========================*/
+
+@media(max-width:1000px){
+
+.timeline{
+
+    padding-left:110px;
+
+}
+
+.timeline-icon{
+
+    left:-110px;
+
+}
+
+.journey-title{
+
+    text-align:center;
+
+}
+
+.journey-title .title-line{
+
+    margin:22px auto;
+
+}
+
+.journey-title p{
+
+    margin:auto;
+
+    margin-top:25px;
+
+}
+
+.journey-content h3{
+
+    font-size:28px;
+
+}
+
+.journey-content p{
+
+    font-size:17px;
+
+}
+
+}
+
+
+/*=========================
+MOBILE
+=========================*/
+
+@media(max-width:768px){
+
+.journey-section{
+
+    padding:90px 0;
+
+}
+
+.timeline{
+
+    padding-left:0;
+
+}
+
+.timeline-line{
+
+    left:23px;
+
+}
+
+.journey-item{
+
+    padding-left:70px;
+
+}
+
+.timeline-icon{
+
+    left:0;
+
+}
+
+.journey-meta{
+
+    flex-wrap:wrap;
+
+}
+
+.journey-title h2{
+
+    font-size:42px;
+
+}
+
+.journey-title p{
+
+    font-size:17px;
+
+}
+
+.journey-content h3{
+
+    font-size:23px;
+
+}
+
+.journey-content p{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+}
+
+
+/*=========================
+SMALL PHONES
+=========================*/
+
+@media(max-width:480px){
+
+.journey-title h2{
+
+    font-size:34px;
+
+}
+
+.journey-title span{
+
+    letter-spacing:4px;
+
+}
+
+.timeline-line{
+
+    left:20px;
+
+}
+
+.timeline-icon{
+
+    width:40px;
+
+    height:40px;
+
+    font-size:15px;
+
+}
+
+.journey-item{
+
+    padding-left:60px;
+
+    margin-bottom:70px;
+
+}
+
+.date{
+
+    font-size:13px;
+
+}
+
+.tag{
+
+    font-size:12px;
+
+    padding:6px 12px;
+
+}
+
+.journey-content h3{
+
+    font-size:20px;
+
+}
+
+.journey-content p{
+
+    font-size:14px;
+
+}
+
+}
