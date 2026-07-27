@@ -1,627 +1,456 @@
-/* ========================================
-   INTRO SCREEN
-======================================== */
+/* INTRO SCREEN */
 
 .intro {
+  animation: introEnter 1.2s ease forwards;
+  position: fixed;
 
-    animation: introEnter 1.2s ease forwards;
-    position: fixed;
+  inset: 0;
 
-    inset: 0;
+  z-index: 1000;
 
-    z-index: 1000;
+  width: 100%;
+  min-height: 100vh;
 
-    width: 100%;
-    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  overflow: hidden;
 
-    overflow: hidden;
-
-    /*
-        Main atmosphere:
-
-        Deep Plum
-            ↓
-        Wine Purple
-            ↓
-        Rich Magenta
-            ↓
-        Violet highlights
-    */
-
-    background:
-
-        /* Central warm purple glow */
-        radial-gradient(
-            ellipse at 52% 47%,
-
-            rgba(165, 27, 120, 0.42) 0%,
-
-            rgba(143, 18, 111, 0.30) 25%,
-
-            rgba(82, 10, 85, 0.22) 48%,
-
-            transparent 72%
-        ),
-
-        /* Main background */
-        linear-gradient(
-            135deg,
-
-            var(--deep-plum) 0%,
-
-            var(--dark-plum) 25%,
-
-            var(--wine-purple) 55%,
-
-            var(--rich-purple) 78%,
-
-            var(--dark-plum) 100%
-        );
-}
-
-@keyframes introEnter {
-
-    from {
-        opacity: 0;
-
-        transform: scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: scale(1);
-    }
-}
-
-
-/* ========================================
-   LARGE AMBIENT PURPLE GLOW
-======================================== */
-
-.intro::before {
-    content: "";
-
-    position: absolute;
-
-    width: 750px;
-    height: 750px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-
-            rgba(143, 18, 111, 0.28) 0%,
-
-            rgba(123, 29, 255, 0.18) 32%,
-
-            rgba(82, 10, 85, 0.12) 50%,
-
-            transparent 72%
-        );
-
-    filter: blur(45px);
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   WARM MAGENTA LIGHT
-======================================== */
-
-.intro::after {
-    content: "";
-
-    position: absolute;
-
-    width: 550px;
-    height: 350px;
-
-    top: 43%;
-    left: 52%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-
-            rgba(165, 27, 120, 0.20) 0%,
-
-            rgba(216, 44, 255, 0.08) 42%,
-
-            transparent 72%
-        );
-
-    filter: blur(35px);
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   INTRO CONTENT
-======================================== */
-
-.intro-content {
-    animation: floatingIntro 5s ease-in-out infinite;
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    max-width: 1000px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@keyframes floatingIntro {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-/* ========================================
-   TOP LABEL
-======================================== */
-
-.intro-label {
-    margin-bottom: 16px;
-
-    font-family: monospace;
-
-    font-size: 0.75rem;
-    font-weight: 600;
-
-    letter-spacing: 0.35em;
-
-    color: var(--soft-pink-purple);
-
-    text-align: center;
-
-    text-shadow:
-        0 0 10px rgba(216, 139, 216, 0.30);
-}
-
-
-/* ========================================
-   MAIN INTRO CONTENT
-======================================== */
-
-.intro-main {
-    position: relative;
-
-    min-height: 190px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 30px;
-}
-
-
-/* ========================================
-   CENTRAL OVAL GLOW
-======================================== */
-
-.intro-main::before {
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 190px;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            ellipse,
-
-            rgba(143, 18, 111, 0.80) 0%,
-
-            rgba(165, 27, 120, 0.65) 28%,
-
-            rgba(123, 29, 255, 0.38) 53%,
-
-            rgba(82, 10, 85, 0.20) 68%,
-
-            transparent 80%
-        );
-
-    filter: blur(17px);
-
-    z-index: 0;
-}
-
-
-/* ========================================
-   TEXT AREA
-======================================== */
-
-.intro-text {
-    position: relative;
-
-    z-index: 1;
-
-    min-width: 300px;
-
-    text-align: right;
-}
-
-
-/* ========================================
-   GREETING
-======================================== */
-
-.intro-greeting {
-    margin-bottom: 4px;
-
-    font-size: 1.75rem;
-    font-weight: 500;
-
-    color: var(--soft-white);
-}
-
-
-/* ========================================
-   NAME
-======================================== */
-
-.intro-name {
-    margin: 0;
-
-    font-size: clamp(3.8rem, 7vw, 5.4rem);
-
-    line-height: 0.95;
-
-    font-weight: 800;
-
-    background:
-        linear-gradient(
-            90deg,
-            #A51B78,
-            #d972f0,
-            #A52CFF,
-            #F08BFF,
-            #cfc7d9,
-            #e8ccde
-        );
-
-    background-size: 300% 100%;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    animation: movingNameColors 5s ease-in-out infinite;
-
-    filter:
-        drop-shadow(0 0 8px rgba(216, 44, 255, 0.45))
-        drop-shadow(0 0 22px rgba(187, 174, 206, 0.35)));
-}
-
-@keyframes movingNameColors {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* ========================================
-   SUBTITLE
-======================================== */
-
-.intro-subtitle {
-    margin-top: 10px;
-
-    font-size: 0.95rem;
-
-    color: var(--muted-text);
-
-    letter-spacing: 0.02em;
-}
-
-
-/* ========================================
-   VERTICAL DIVIDER
-======================================== */
-
-.intro-divider {
-    position: relative;
-
-    z-index: 1;
-
-    width: 1px;
-    height: 50px;
-
-    margin: 0 34px;
-
-    background: white
-
+  
     
 }
 
-/* ========================================
-   PROFILE IMAGE CONTAINER
-======================================== */
+@keyframes introEnter {
+  from {
+    opacity: 0;
+
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+.intro::before {
+  content: "";
+
+  position: absolute;
+
+  width: 750px;
+  height: 750px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(143, 18, 111, 0.28) 0%,
+
+    rgba(123, 29, 255, 0.18) 32%,
+
+    rgba(82, 10, 85, 0.12) 50%,
+
+    transparent 72%
+  );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+.intro::after {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 350px;
+
+  top: 43%;
+  left: 52%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(165, 27, 120, 0.2) 0%,
+
+    rgba(216, 44, 255, 0.08) 42%,
+
+    transparent 72%
+  );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+.intro-content {
+  animation: floatingIntro 5s ease-in-out infinite;
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes floatingIntro {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.intro-label {
+  margin-bottom: 16px;
+
+  font-family: monospace;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.35em;
+
+  color: var(--soft-pink-purple);
+
+  text-align: center;
+
+  text-shadow: 0 0 10px rgba(216, 139, 216, 0.3);
+}
+
+.intro-main {
+  position: relative;
+
+  min-height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 30px;
+}
+
+/* CENTRAL OVAL GLOW */
+
+.intro-main::before {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 190px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(143, 18, 111, 0.8) 0%,
+
+    rgba(165, 27, 120, 0.65) 28%,
+
+    rgba(123, 29, 255, 0.38) 53%,
+
+    rgba(82, 10, 85, 0.2) 68%,
+
+    transparent 80%
+  );
+
+  filter: blur(17px);
+
+  z-index: 0;
+}
+
+.intro-text {
+  position: relative;
+
+  z-index: 1;
+
+  min-width: 300px;
+
+  text-align: right;
+}
+
+.intro-greeting {
+  margin-bottom: 4px;
+
+  font-size: 1.75rem;
+  font-weight: 500;
+
+  color: var(--soft-white);
+}
+
+.intro-name {
+  margin: 0;
+
+  font-size: clamp(3.8rem, 7vw, 5.4rem);
+
+  line-height: 0.95;
+
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #a51b78,
+    #d972f0,
+    #a52cff,
+    #f08bff,
+    #cfc7d9,
+    #e8ccde
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: movingNameColors 5s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 8px rgba(216, 44, 255, 0.45))
+    drop-shadow(0 0 22px rgba(187, 174, 206, 0.35));
+}
+
+@keyframes movingNameColors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.intro-subtitle {
+  margin-top: 10px;
+
+  font-size: 0.95rem;
+
+  color: var(--muted-text);
+
+  letter-spacing: 0.02em;
+}
+
+/* VERTICAL DIVIDER */
+
+.intro-divider {
+  position: relative;
+
+  z-index: 1;
+
+  width: 1px;
+  height: 50px;
+
+  margin: 0 34px;
+
+  background: white;
+}
 
 .intro-image-container {
-    position: relative;
+  position: relative;
 
-    z-index: 1;
+  z-index: 1;
 
-    width: 125px;
-    height: 125px;
+  width: 125px;
+  height: 125px;
 
-    padding: 3px;
+  padding: 3px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background:
+  background: linear-gradient(
+    135deg,
+    #ff9a4d 0%,
 
-        linear-gradient(
-            135deg,
+    var(--rich-magenta) 28%,
 
-            #FF9A4D 0%,
+    var(--neon-magenta) 52%,
 
-            var(--rich-magenta) 28%,
+    var(--vibrant-violet) 78%,
 
-            var(--neon-magenta) 52%,
+    var(--electric-purple) 100%
+  );
 
-            var(--vibrant-violet) 78%,
-
-            var(--electric-purple) 100%
-        );
-
-    box-shadow:
-
-        0 0 12px rgba(216, 44, 255, 0.55),
-
-        0 0 25px rgba(165, 27, 120, 0.70),
-
-        0 0 50px rgba(123, 29, 255, 0.40);
+  box-shadow:
+    0 0 12px rgba(216, 44, 255, 0.55),
+    0 0 25px rgba(165, 27, 120, 0.7),
+    0 0 50px rgba(123, 29, 255, 0.4);
 }
-
-
-/* ========================================
-   PROFILE IMAGE
-======================================== */
 
 .intro-image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    border: 3px solid var(--dark-plum);
+  border: 3px solid var(--dark-plum);
 }
-
 
 .intro-line {
-    width: 250px;
-    height: 2px;
+  width: 250px;
+  height: 2px;
 
-    margin-top: 38px;
+  margin-top: 38px;
 
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #c786f8 20%,
-            #D82CFF 50%,
-            #736a79 80%,
-            transparent
-        );
+  background: linear-gradient(
+    to right,
+    transparent,
+    #c786f8 20%,
+    #d82cff 50%,
+    #736a79 80%,
+    transparent
+  );
 
-    box-shadow:
-        0 0 8px rgba(221, 85, 251, 0.65);
+  box-shadow: 0 0 8px rgba(221, 85, 251, 0.65);
 }
 
-/* ========================================
-   INTRO DISAPPEARING
-======================================== */
+/* INTRO DISAPPEARING  */
 
 .intro.hide-intro {
-    animation: introExit 1.2s ease forwards;
+  animation: introExit 1.2s ease forwards;
 
-    pointer-events: none;
+  pointer-events: none;
 }
-
 
 @keyframes introExit {
+  from {
+    opacity: 1;
 
-    from {
-        opacity: 1;
+    transform: scale(1);
+  }
 
-        transform: scale(1);
-    }
+  to {
+    opacity: 0;
 
-    to {
-        opacity: 0;
-
-        transform: scale(0.96);
-    }
+    transform: scale(0.96);
+  }
 }
 
-/* ========================================
-   TABLET
-======================================== */
+/* Responsiveness    */
 
 @media (max-width: 768px) {
+  .intro-main {
+    padding: 0 20px;
+  }
 
-    .intro-main {
-        padding: 0 20px;
-    }
+  .intro-text {
+    min-width: 230px;
+  }
 
+  .intro-greeting {
+    font-size: 1.45rem;
+  }
 
-    .intro-text {
-        min-width: 230px;
-    }
+  .intro-name {
+    font-size: 3.8rem;
+  }
 
+  .intro-image-container {
+    width: 105px;
+    height: 105px;
+  }
 
-    .intro-greeting {
-        font-size: 1.45rem;
-    }
+  .intro-divider {
+    height: 95px;
 
+    margin: 0 22px;
+  }
 
-    .intro-name {
-        font-size: 3.8rem;
-    }
-
-
-    .intro-image-container {
-        width: 105px;
-        height: 105px;
-    }
-
-
-    .intro-divider {
-        height: 95px;
-
-        margin: 0 22px;
-    }
-
-
-    .intro-main::before {
-        width: 500px;
-        height: 160px;
-    }
+  .intro-main::before {
+    width: 500px;
+    height: 160px;
+  }
 }
-
-
-/* ========================================
-   MOBILE
-======================================== */
 
 @media (max-width: 550px) {
+  .intro-label {
+    font-size: 0.6rem;
 
-    .intro-label {
-        font-size: 0.6rem;
+    letter-spacing: 0.22em;
+  }
 
-        letter-spacing: 0.22em;
-    }
+  .intro-main {
+    flex-direction: column;
 
+    gap: 18px;
+  }
 
-    .intro-main {
-        flex-direction: column;
+  .intro-text {
+    min-width: auto;
 
-        gap: 18px;
-    }
+    text-align: center;
+  }
 
+  .intro-greeting {
+    font-size: 1.35rem;
+  }
 
-    .intro-text {
-        min-width: auto;
+  .intro-name {
+    font-size: 3.8rem;
+  }
 
-        text-align: center;
-    }
+  .intro-subtitle {
+    font-size: 0.8rem;
+  }
 
+  .intro-divider {
+    width: 90px;
+    height: 2px;
 
-    .intro-greeting {
-        font-size: 1.35rem;
-    }
+    margin: 0;
 
+    background: linear-gradient(
+      to right,
 
-    .intro-name {
-        font-size: 3.8rem;
-    }
+      transparent,
+      var(--neon-magenta),
+      transparent
+    );
+  }
 
+  .intro-image-container {
+    width: 110px;
+    height: 110px;
+  }
 
-    .intro-subtitle {
-        font-size: 0.8rem;
-    }
+  .intro-main::before {
+    width: 340px;
+    height: 420px;
+  }
 
+  .intro-progress-container {
+    width: 210px;
 
-    .intro-divider {
-        width: 90px;
-        height: 2px;
-
-        margin: 0;
-
-        background:
-
-            linear-gradient(
-                to right,
-
-                transparent,
-
-                var(--neon-magenta),
-
-                transparent
-            );
-    }
-
-
-    .intro-image-container {
-        width: 110px;
-        height: 110px;
-    }
-
-
-    .intro-main::before {
-        width: 340px;
-        height: 420px;
-    }
-
-
-    .intro-progress-container {
-        width: 210px;
-
-        margin-top: 42px;
-    }
-}
-
-/* ========================================
-   HOME PAGE DURING INTRO
-======================================== */
-
-.home {
-    filter: blur(12px);
-
-    transform: scale(1.02);
-
-    transition:
-        filter 1.5s ease,
-        transform 1.5s ease;
+    margin-top: 42px;
+  }
 }

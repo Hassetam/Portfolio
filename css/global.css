@@ -1,212 +1,593 @@
-/* ========================================
-   GLOBAL RESET
-======================================== */
+/* GLOBAL RESET */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
-
-
-/* ========================================
-   GLOBAL COLOR SYSTEM
-======================================== */
-
-:root {
-
-    /* ====================================
-       DARK FOUNDATION
-    ==================================== */
-
-    --deep-plum: #1B061F;
-    --dark-plum: #28072F;
-    --wine-purple: #3A083D;
-
-
-    /* ====================================
-       MAIN PURPLE / MAGENTA PALETTE
-    ==================================== */
-
-    --rich-purple: #520A55;
-    --deep-magenta: #700B68;
-    --rich-magenta: #8F126F;
-    --berry-purple: #A51B78;
-
-
-    /* ====================================
-       VIBRANT ACCENTS
-    ==================================== */
-
-    --vibrant-violet: #7B1DFF;
-    --electric-purple: #A52CFF;
-    --neon-magenta: #D82CFF;
-
-
-    /* ====================================
-       LIGHTER ACCENTS
-    ==================================== */
-
-    --soft-pink-purple: #D88BD8;
-    --soft-lavender: #C9A8F5;
-    --light-purple: #E7C4F1;
-
-
-    /* ====================================
-       TEXT COLORS
-    ==================================== */
-
-    --white: #FFFFFF;
-    --soft-white: #F9F1FA;
-    --muted-text: #C59BC9;
-
-
-    /* ====================================
-       GLOW COLORS
-    ==================================== */
-
-    --purple-glow: rgba(123, 29, 255, 0.55);
-    --magenta-glow: rgba(216, 44, 255, 0.45);
-    --berry-glow: rgba(165, 27, 120, 0.45);
-}
-
-
-/* ========================================
-   HTML
-======================================== */
+/* HTML */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-
-/* ========================================
-   BODY
-======================================== */
+/* BODY */
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 
-    background: var(--deep-plum);
+  background: #1b061f;
 
-    color: var(--white);
+  color: white;
 
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-
-/* ========================================
-   IMAGES
-======================================== */
+/* IMAGES */
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
-
-/* ========================================
-   LINKS
-======================================== */
+/* LINKS */
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-
-/* ========================================
-   BUTTONS & FORM ELEMENTS
-======================================== */
+/* BUTTONS & FORM ELEMENTS */
 
 button,
 input,
 textarea {
-    font: inherit;
+  font: inherit;
 }
-
-
 
 button {
-    border: none;
-    cursor: pointer;
+  border: none;
+  cursor: pointer;
 }
 
+/* HEADER */
 
-/*========================
+header {
+  width: 88%;
+  margin-bottom: 40px;
 
-HEADER
+  height: 90px;
 
-=========================*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-header{
-
-    width:88%;
-    margin:auto;
-
-    height:90px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    position:relative;
-    z-index:100;
-
+  position: relative;
+  z-index: 100;
 }
 
-.logo{
+.logo {
+  width: 42px;
+  height: 42px;
+  margin-left: 40px;
 
-    width:42px;
-    height:42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
-    border-radius:50%;
-
-    border:1px solid rgba(255,255,255,.2);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-
-    font-weight:600;
-
-    font-size:15px;
-
-    background:rgba(255,255,255,.04);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-nav ul{
-
-    display:flex;
-    list-style:none;
-    gap:45px;
-
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 45px;
 }
 
-nav a{
+nav a {
+  color: #c9c1dc;
+  text-decoration: none;
 
-    color:#c9c1dc;
-    text-decoration:none;
+  font-size: 15px;
 
-    font-size:15px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-nav a:hover{
+nav a:hover {
+  color: white;
+}
 
-    color:white;
+/* HAMBURGER */
 
+.menu-toggle {
+  width: 35px;
+  height: 28px;
+
+  display: none;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  transition: 0.35s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 80px;
+  background-color: #1b061f;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  /* Reduced from 40px to 20px */
+  padding: 20px 0;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* FOOTER GLOW */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.16),
+    transparent 70%
+  );
+
+  right: -80px;
+  bottom: -80px;
+
+  filter: blur(50px);
+}
+
+.footer-container {
+  width: 88%;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+/* Left side */
+
+.footer-left p {
+  color: #9f95b7;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+}
+
+/* Right side */
+
+.footer-right {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* Coffee */
+
+.coffee {
+  position: relative;
+
+  /* Reduced from 120x90 to approximately half */
+  width: 60px;
+  height: 45px;
+
+  transform-origin: center bottom;
+
+  animation: cheers 7s ease-in-out infinite;
+}
+
+.cup {
+  position: absolute;
+
+  left: 17px;
+  bottom: 9px;
+
+  width: 24px;
+  height: 19px;
+
+  border: 1px solid #b96cff;
+
+  border-radius: 0 0 6px 6px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: #d86dff;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition: 0.4s;
+}
+
+.cup::before {
+  content: "";
+
+  position: absolute;
+
+  top: 2px;
+  left: 2px;
+
+  width: 19px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(90deg, #8b5cf6, #d946ef);
+
+  animation: coffeeWave 3s ease-in-out infinite;
+}
+
+.cup:hover {
+  box-shadow:
+    0 0 10px rgba(139, 92, 246, 0.45),
+    0 0 22px rgba(217, 70, 239, 0.25);
+}
+
+.cup i {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 5px;
+}
+
+.handle {
+  position: absolute;
+
+  left: 40px;
+  bottom: 13px;
+
+  width: 7px;
+  height: 9px;
+
+  border: 1px solid #b96cff;
+
+  border-left: none;
+
+  border-radius: 0 5px 5px 0;
+}
+
+.plate {
+  position: absolute;
+
+  width: 36px;
+  height: 2px;
+
+  left: 11px;
+  bottom: 6px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(90deg, #8b5cf6, #d946ef);
+
+  opacity: 0.35;
+}
+
+.steam {
+  position: absolute;
+
+  width: 1px;
+  height: 6px;
+
+  border-radius: 30px;
+
+  background: #d946ef;
+
+  opacity: 0.6;
+
+  animation: steam 3s ease-in-out infinite;
+}
+
+.steam1 {
+  left: 22px;
+  top: 5px;
+}
+
+.steam2 {
+  left: 28px;
+  top: 2px;
+}
+
+.steam3 {
+  left: 34px;
+  top: 5px;
+}
+
+/* sparkles */
+
+.sparkle {
+  position: absolute;
+
+  color: #d946ef;
+
+  font-size: 5px;
+
+  text-shadow:
+    0 0 4px #d946ef,
+    0 0 8px #8b5cf6;
+
+  animation: twinkle 2s infinite;
+}
+
+/* Smaller positions around the smaller cup */
+
+.s1 {
+  right: 3px;
+  top: 2px;
+}
+
+.s2 {
+  right: -2px;
+  top: 14px;
+
+  animation-delay: 0.7s;
+}
+
+.s3 {
+  left: 2px;
+  top: 5px;
+
+  animation-delay: 1.4s;
+}
+
+/* ANIMATIONS */
+
+@keyframes cheers {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(-5deg);
+  }
+
+  55% {
+    transform: rotate(5deg);
+  }
+
+  65% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+
+    transform: translateY(4px);
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-9px) translateX(2px);
+  }
+}
+
+@keyframes coffeeWave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+
+    transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.3);
+  }
+}
+
+/* Responsiveness */
+
+@media (max-width: 1100px) {
+  header {
+    width: 92%;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* header */
+  header {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: absolute;
+
+    top: 90px;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(24, 5, 47, 0.98);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    max-height: 0;
+
+    transition: 0.45s;
+  }
+
+  nav.active {
+    max-height: 500px;
+  }
+
+  nav ul {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  nav li {
+    text-align: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* footer */
+  .footer {
+    padding: 15px 0;
+  }
+
+  .footer-container {
+    width: 88%;
+  }
+
+  .footer-left p {
+    font-size: 8px;
+  }
+
+  .coffee {
+    width: 45px;
+    height: 35px;
+  }
+
+  .cup {
+    width: 19px;
+    height: 15px;
+
+    left: 13px;
+    bottom: 7px;
+  }
+
+  .cup::before {
+    width: 15px;
+
+    height: 2px;
+  }
+
+  .cup i {
+    font-size: 4px;
+  }
+
+  .handle {
+    left: 31px;
+
+    bottom: 10px;
+
+    width: 6px;
+
+    height: 7px;
+  }
+
+  .plate {
+    width: 27px;
+
+    left: 8px;
+
+    bottom: 4px;
+  }
+
+  .steam1 {
+    left: 16px;
+  }
+
+  .steam2 {
+    left: 21px;
+  }
+
+  .steam3 {
+    left: 26px;
+  }
+
+  .sparkle {
+    font-size: 4px;
+  }
 }
