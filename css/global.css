@@ -472,6 +472,13 @@ nav a:hover {
   }
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
   /* header */
   header {

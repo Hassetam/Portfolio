@@ -1,6 +1,13 @@
-/*=========================================
-                CONTACT SECTION
-==========================================*/
+header {
+  position: fixed;
+  z-index: 1000;
+  background: #1b061f;
+  width: 100%;
+}
+
+nav {
+  padding-right: 250px;
+}
 
 .contact-section {
   position: relative;

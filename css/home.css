@@ -39,7 +39,7 @@
 /* HERO */
 
 .hero {
-  width: 88%;
+  max-width: 100%;
   margin: auto;
 
   min-height: calc(100vh - 90px);
@@ -115,7 +115,8 @@
 .description {
   margin-top: 28px;
 
-  width: 540px;
+  width: 100%;
+  max-width: 540px;
 
   font-size: 18px;
 
@@ -658,6 +659,22 @@
     padding: 30px 40px;
   }
 
+  .learning {
+    right: 0;
+  }
+
+  .code {
+    right: 0;
+  }
+
+  .year {
+    left: 0;
+  }
+
+  .hero-image {
+    width: min(280px, 85vw);
+    height: min(280px, 85vw);
+  }
   nav ul {
     flex-wrap: wrap;
 

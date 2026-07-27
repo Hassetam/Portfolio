@@ -1,16 +1,22 @@
-/*====================================================
-                JOURNEY SECTION
-====================================================*/
+header {
+  position: fixed;
+  z-index: 1000;
+  background: #1b061f;
+  width: 100%;
+}
+
+nav {
+  padding-right: 250px;
+}
+
 
 .journey-section{
 
-    position:relative;
+    position: relative;
 
-    padding:120px 0;
+    padding: 120px 0;
 
-    background:#18052f;
-
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
@@ -29,9 +35,7 @@
 }
 
 
-/*=========================
-BACKGROUND GLOW
-=========================*/
+/* Background Glow */
 
 .journey-section::before{
 
@@ -82,9 +86,7 @@ BACKGROUND GLOW
 }
 
 
-/*=========================
-TITLE
-=========================*/
+/* Title */
 
 .journey-title{
 
@@ -150,9 +152,7 @@ TITLE
 }
 
 
-/*=========================
-TIMELINE
-=========================*/
+/* Timeline */
 
 .timeline{
 
@@ -179,9 +179,7 @@ TIMELINE
 }
 
 
-/*=========================
-ITEM
-=========================*/
+/* Item */
 
 .journey-item{
 
@@ -202,9 +200,7 @@ ITEM
 }
 
 
-/*=========================
-ICON
-=========================*/
+/* Icon */
 
 .timeline-icon{
 
@@ -239,9 +235,7 @@ ICON
 }
 
 
-/*=========================
-CONTENT
-=========================*/
+/* Content */
 
 .journey-content{
 
@@ -307,13 +301,9 @@ CONTENT
 
 }
 
-/*====================================================
-        JOURNEY ANIMATIONS & RESPONSIVE
-====================================================*/
+/* Animations */
 
-/*=========================
-BACKGROUND GLOW ANIMATION
-=========================*/
+/* Background Glow Animation */
 
 .journey-section::before{
 
@@ -360,9 +350,7 @@ BACKGROUND GLOW ANIMATION
 }
 
 
-/*=========================
-TITLE LINE
-=========================*/
+/* Title Line */
 
 .journey-title .title-line{
 
@@ -389,9 +377,7 @@ TITLE LINE
 }
 
 
-/*=========================
-TIMELINE LINE
-=========================*/
+/* Timeline Line */
 
 .timeline-line{
 
@@ -425,9 +411,7 @@ TIMELINE LINE
 }
 
 
-/*=========================
-TIMELINE ICON
-=========================*/
+/* Timeline Icon */
 
 .timeline-icon{
 
@@ -476,9 +460,7 @@ TIMELINE ICON
 }
 
 
-/*=========================
-CONTENT CARD
-=========================*/
+/* Content Card */
 
 .journey-content{
 
@@ -505,9 +487,7 @@ CONTENT CARD
 }
 
 
-/*=========================
-TAG
-=========================*/
+/* Tag */
 
 .tag{
 
@@ -528,9 +508,7 @@ TAG
 }
 
 
-/*=========================
-SCROLL ANIMATION
-=========================*/
+/* Scroll Animation */
 
 .journey-item{
 
@@ -595,198 +573,189 @@ SCROLL ANIMATION
     }
 
 }
-
-
-/*=========================
-TABLET
-=========================*/
+/* Tablet */
 
 @media(max-width:1000px){
 
-.timeline{
+    .timeline{
 
-    padding-left:110px;
+        padding-left:110px;
+
+    }
+
+    .timeline-icon{
+
+        left:-110px;
+
+    }
+
+    .journey-title{
+
+        text-align:center;
+
+    }
+
+    .journey-title .title-line{
+
+        margin:22px auto;
+
+    }
+
+    .journey-title p{
+
+        margin:auto;
+
+        margin-top:25px;
+
+    }
+
+    .journey-content h3{
+
+        font-size:28px;
+
+    }
+
+    .journey-content p{
+
+        font-size:17px;
+
+    }
 
 }
 
-.timeline-icon{
 
-    left:-110px;
-
-}
-
-.journey-title{
-
-    text-align:center;
-
-}
-
-.journey-title .title-line{
-
-    margin:22px auto;
-
-}
-
-.journey-title p{
-
-    margin:auto;
-
-    margin-top:25px;
-
-}
-
-.journey-content h3{
-
-    font-size:28px;
-
-}
-
-.journey-content p{
-
-    font-size:17px;
-
-}
-
-}
-
-
-/*=========================
-MOBILE
-=========================*/
+/* Mobile */
 
 @media(max-width:768px){
 
-.journey-section{
+    .journey-section{
 
-    padding:90px 0;
+        padding:90px 0;
+
+    }
+
+    .timeline{
+
+        padding-left:0;
+
+    }
+
+    .timeline-line{
+
+        left:23px;
+
+    }
+
+    .journey-item{
+
+        padding-left:70px;
+
+    }
+
+    .timeline-icon{
+
+        left:0;
+
+    }
+
+    .journey-meta{
+
+        flex-wrap:wrap;
+
+    }
+
+    .journey-title h2{
+
+        font-size:42px;
+
+    }
+
+    .journey-title p{
+
+        font-size:17px;
+
+    }
+
+    .journey-content h3{
+
+        font-size:23px;
+
+    }
+
+    .journey-content p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
 
 }
 
-.timeline{
-
-    padding-left:0;
-
-}
-
-.timeline-line{
-
-    left:23px;
-
-}
-
-.journey-item{
-
-    padding-left:70px;
-
-}
-
-.timeline-icon{
-
-    left:0;
-
-}
-
-.journey-meta{
-
-    flex-wrap:wrap;
-
-}
-
-.journey-title h2{
-
-    font-size:42px;
-
-}
-
-.journey-title p{
-
-    font-size:17px;
-
-}
-
-.journey-content h3{
-
-    font-size:23px;
-
-}
-
-.journey-content p{
-
-    font-size:15px;
-
-    line-height:1.8;
-
-}
-
-}
-
-
-/*=========================
-SMALL PHONES
-=========================*/
+/* Small Phones */
 
 @media(max-width:480px){
 
-.journey-title h2{
+    .journey-title h2{
 
-    font-size:34px;
+        font-size:34px;
 
-}
+    }
 
-.journey-title span{
+    .journey-title span{
 
-    letter-spacing:4px;
+        letter-spacing:4px;
 
-}
+    }
 
-.timeline-line{
+    .timeline-line{
 
-    left:20px;
+        left:20px;
 
-}
+    }
 
-.timeline-icon{
+    .timeline-icon{
 
-    width:40px;
+        width:40px;
 
-    height:40px;
+        height:40px;
 
-    font-size:15px;
+        font-size:15px;
 
-}
+    }
 
-.journey-item{
+    .journey-item{
 
-    padding-left:60px;
+        padding-left:60px;
 
-    margin-bottom:70px;
+        margin-bottom:70px;
 
-}
+    }
 
-.date{
+    .date{
 
-    font-size:13px;
+        font-size:13px;
 
-}
+    }
 
-.tag{
+    .tag{
 
-    font-size:12px;
+        font-size:12px;
 
-    padding:6px 12px;
+        padding:6px 12px;
 
-}
+    }
 
-.journey-content h3{
+    .journey-content h3{
 
-    font-size:20px;
+        font-size:20px;
 
-}
+    }
 
-.journey-content p{
+    .journey-content p{
 
-    font-size:14px;
+        font-size:14px;
 
-}
+    }
 
 }
